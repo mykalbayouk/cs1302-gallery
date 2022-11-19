@@ -11,9 +11,9 @@ public class SearchBox extends HBox {
     Button play;
     Button get;
     ComboBox drop;
-    String[] dropItems = {"movie",
+    String[] dropItems = {"music",
             "podcast",
-            "music",
+            "movie",
             "musicVideo",
             "audiobook",
             "shortFilm",
@@ -22,7 +22,6 @@ public class SearchBox extends HBox {
             "ebook",
             "all"};
 
-
     public SearchBox() {
         super();
         textBox = new TextField("Kid Cudi");
@@ -30,6 +29,7 @@ public class SearchBox extends HBox {
         get = new Button("Update Images");
         drop = new ComboBox();
         drop.getItems().addAll(dropItems);
+        drop.getSelectionModel().selectFirst();
 
         this.getChildren().addAll(play,textBox,drop,get);
     } // constructor
