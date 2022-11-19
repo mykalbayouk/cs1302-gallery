@@ -35,6 +35,7 @@ public class GalleryApp extends Application {
     private VBox layout;
     private SearchBox search;
     private TheGrid grid;
+    private LoadingBox loading;
     /**
      * Constructs a {@code GalleryApp} object}.
      */
@@ -45,12 +46,13 @@ public class GalleryApp extends Application {
         this.layout = new VBox();
         this.search = new SearchBox();
         this.grid = new TheGrid();
+        this.loading = new LoadingBox();
     } // GalleryApp
 
     /** {@inheritDoc} */
     @Override
     public void init() {
-        layout.getChildren().addAll(search,grid);
+        layout.getChildren().addAll(search,grid,loading);
         System.out.println("init() called");
     } // init
 
