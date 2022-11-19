@@ -7,6 +7,7 @@ import javafx.application.Platform;
 import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.layout.VBox;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,6 +32,8 @@ public class GalleryApp extends Application {
     private Scene scene;
     private HBox root;
 
+    private VBox layout;
+    private SearchBox search;
     /**
      * Constructs a {@code GalleryApp} object}.
      */
@@ -38,12 +41,14 @@ public class GalleryApp extends Application {
         this.stage = null;
         this.scene = null;
         this.root = new HBox();
+        this.layout = new VBox();
+        this.search = new SearchBox();
     } // GalleryApp
 
     /** {@inheritDoc} */
     @Override
     public void init() {
-        // feel free to modify this method
+        layout.getChildren().addAll(search);
         System.out.println("init() called");
     } // init
 
@@ -51,7 +56,7 @@ public class GalleryApp extends Application {
     @Override
     public void start(Stage stage) {
         this.stage = stage;
-        this.scene = new Scene(this.root);
+        this.scene = new Scene(this.layout);
         this.stage.setOnCloseRequest(event -> Platform.exit());
         this.stage.setTitle("GalleryApp!");
         this.stage.setScene(this.scene);
