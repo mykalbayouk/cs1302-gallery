@@ -1,16 +1,27 @@
 package cs1302.gallery;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.http.HttpClient;
-
+import java.nio.charset.StandardCharsets;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
-
+import java.net.URI;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
+import java.net.http.HttpRequest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.lang.Thread;
+import java.lang.Runnable;
+import javafx.application.Platform;
 
 /**
  * Represents an iTunes Gallery App.
@@ -36,6 +47,8 @@ public class GalleryApp extends Application {
     private SearchBox search;
     private TheGrid grid;
     private LoadingBox loading;
+
+
     /**
      * Constructs a {@code GalleryApp} object}.
      */
@@ -54,7 +67,23 @@ public class GalleryApp extends Application {
     public void init() {
         layout.getChildren().addAll(search,grid,loading);
         System.out.println("init() called");
+        Runnable r = () -> loadImage();
+        search.getUpdate().setOnAction(e -> runNow(r));
     } // init
+
+    public void loadImage() {
+        search.getUpdate().setDisable(true);
+        search.request();
+        grid.downloadImage(search.getPictureURL());
+        grid.showImg();
+        search.getUpdate().setDisable(false);
+    } // loadImage
+
+    public void runNow(Runnable target) {
+        Thread t = new Thread(target);
+        t.setDaemon(true);
+        t.start();
+    } // runNow
 
     /** {@inheritDoc} */
     @Override
@@ -75,5 +104,6 @@ public class GalleryApp extends Application {
         // feel free to modify this method
         System.out.println("stop() called");
     } // stop
+
 
 } // GalleryApp

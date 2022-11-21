@@ -5,7 +5,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Label;
 
 public class LoadingBox extends HBox {
-    ProgressBar bar;
+    static ProgressBar bar;
     Label text;
 
     public LoadingBox() {
@@ -16,4 +16,7 @@ public class LoadingBox extends HBox {
         this.getChildren().addAll(bar,text);
     } // constructor
 
+    public static void updateBar(double amount) {
+        bar.setProgress(amount);
+    } //updateBar
 } // LoadingBox
