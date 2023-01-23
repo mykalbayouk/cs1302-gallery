@@ -10,6 +10,7 @@ package cs1302.gallery;
 public class ItunesResult {
     String wrapperType;
     String kind;
+    String trackName;
     String artworkUrl100;
     // the rest of the result is intentionally omitted since we don't use it
 } // ItunesResult
