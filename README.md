@@ -1,12 +1,6 @@
 # CSCI 1302 - Gallery v2022.fa
 
-![Approved for: Fall 2022](https://img.shields.io/badge/Approved%20for-Fall%202022-darkgreen)
-
-This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Fall 2022 CSCI 1302 classes
-at the University of Georgia.
-
-## Deadline Options
+Project assinged during the Fall 2022 Academic School Year.
 
 ## Course-Specific Learning Outcomes
 
@@ -18,17 +12,6 @@ are organized into multi-level packages and have external dependencies.
 * **LO5.b:** Utilize a build tool such as Maven or Ant to create and manage a complex software solution involving external dependencies.
 * **LO7.a:** Design and implement a graphical user interface in a software project.
 * **LO7.c:** Use common abstract data types and structures, including lists, queues, arrays, and stacks in solving typical problems.
-
-## Academic Honesty
-
-You agree to the Academic Honesty policy as outlined in the course syllabus.
-In accordance with this notice, I must caution you **not** to
-fork this repository on GitHub if you have an account. Doing so will more than
-likely make your copy of the project publicly visible. Please follow the
-instructions contained in the
-[How to Download the Project](#how-to-download-the-project)
-section below in order to do your development on odin. Furthermore, you must adhere
-to the copyright notice and licensing information at the bottom of this document.
 
 
 ## Project Description
@@ -66,7 +49,8 @@ a good idea to make a custom version of that component in order to reduce
 clutter.
 
 
-//creativecommons.org/licenses/by-nc-nd/4.0/)
+
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 <small>
 Copyright &copy; Michael E. Cotterell and the University of Georgia.
